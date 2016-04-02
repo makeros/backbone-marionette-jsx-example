@@ -1,0 +1,28 @@
+{
+  "name": "marionette-jsx-example",
+  "version": "0.0.1",
+  "description": "Marionette views using jsx example",
+  "dependencies": {
+    "backbone": "^1.3.2",
+    "backbone.marionette": "^2.4.5",
+    "browserify": "^13.0.0",
+    "chance": "^1.0.1",
+    "glob": "^7.0.3",
+    "jquery": "^2.2.2",
+    "minimist": "^1.2.0",
+    "nativejsx": "^3.0.2",
+    "npm-run-all": "^1.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean:js": "rm -r ./dist/js",
+    "copy:html": "cp ./src/index.html ./dist/index.html",
+    "copy:js": "cp -r src/js/ dist/js/",
+    "build:jsx": "node parse-jsx.js --src=dist",
+    "build:js": "browserify ./dist/js/main.js -o ./dist/bundle.js",
+    "build": "npm-run-all copy:* build:jsx build:js clean:js"
+  },
+  "author": "arek czogala <mail@arekczogala.pl>",
+  "license": "ISC"
+}
